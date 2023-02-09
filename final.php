@@ -1,6 +1,6 @@
 <?php
-require("inc/fw.php");
-include_once 'header.php';
+include "inc/fw.php";
+include 'header.php';
 function same()
 {
 	$result = mysqli_query($idconn, $sql);
@@ -12,19 +12,21 @@ function same()
 	{
 		echo "Base de datos actualizada.";
 	}
-   	echo "<BR>Quieres hacer más modificaciones o cerrar sesión?";
-   	echo "<form action=where.php method=POST><input type=submit name=modify value='Seguir editando' />";
-   	echo "<input type=submit name=exit value='Salir y cerrar sesión' /></form>";
+   	echo "<br>Quieres hacer más modificaciones o cerrar sesión?
+   	<form action='where.php' method='post'>
+    <input type='submit' name='modify' value='Seguir editando'>
+    <br><br>
+   	<input type='submit' name='exit' value='Salir y cerrar sesión'></form>";
 }
 function delete($id)
 {
-	$sql = "delete from clientes where id = '$id'";
+	$sql = "DELETE FROM clientes WHERE id=$id";
 	same();
 }
 
 function update($id, $name, $surname, $phone, $email)
 {
-	$sql = "update clientes set name = '$name', surname = '$surname', phone = '$phone', email = '$email' where id = '$id'";
+	$sql = "UPDATE clientes SET name = '$name', surname = '$surname', phone = '$phone', email = '$email' WHERE id=$id";
 	same();
 
 }
@@ -39,5 +41,5 @@ else
 		delete($_POST['radio']);
 	}
 }
-include_once 'footer.php';
+include 'footer.php';
 ?>
