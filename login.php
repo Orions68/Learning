@@ -16,7 +16,7 @@ else
 <form action="inside.php" method="post">
 <div class="align"><label><input type="text" name="name"> Nombre</label></div>
 <br><br>
-<div class="align"><label><input type="password" name="pass"> Contraseña:</label></div>
+<div class="align"><label><input type="password" name="pass"> Contraseña</label></div>
 <br><br>
 <input type="submit" value="Enviar">
 </form>

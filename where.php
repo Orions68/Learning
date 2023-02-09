@@ -1,5 +1,5 @@
 <?php
-include_once 'header.php';
+include 'header.php';
 if (isset($_POST['modify']))
 {
 	header("Location:inside.php");
@@ -10,5 +10,5 @@ if (isset($_POST['exit']))
 	header("Location:exit.php");
 	exit;
 }
-include_once 'footer.php';
+include 'footer.php';
 ?>

@@ -1,11 +1,11 @@
 <?php
 include_once 'header.php';
-echo "<form action=add.php method=POST>";
-echo "Nombre: <input type=text name=name />";
-echo "Apellido: <input type=text name=surname />";
-echo "Teléfono: <input type=text name=phone />";
-echo "E-mail: <input type=text name=email />";
-echo "<BR><input type=submit value='Enviar' />";
+echo "<form action='add.php' method='post'>";
+echo "<label><input type='text' name='name'> Nombre</label>";
+echo "<br><br><label><input type='text' name='surname'> Apellido</label>";
+echo "<br><br><label><input type='text' name='phone'> Teléfono</label>";
+echo "<br><br><label><input type='text' name='email'> E-mail</label>";
+echo "<br><br><label><input type='submit' value='Enviar'>";
 echo "</form>";
 include_once 'footer.php';
 ?>

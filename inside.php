@@ -1,6 +1,6 @@
 <?php
 @session_start();
-include_once'header.php';
+include 'header.php';
 ?>
 <script type="text/javascript">
 function insert()
@@ -60,14 +60,19 @@ else
 
 function inside()
 {
-	echo "Estás dentro<br />";
-	echo "Puedes agregar, modificar y borrar noticias de la base de datos.<BR>";
-	echo "<BR><input type=button value='Agregar noticia' onclick='insert()'/><BR>";
-	echo "<BR><button id=show>Modificar o Borrar noticia</button><BR><BR>";
-	echo "<div><form action=modify.php method=POST>";
-	echo "<input type=text name=titulo /><BR>";
-	echo "<input type=submit value='Buscar' /><BR>";
-	echo "</form></div>";
+	echo "<h1>Estás dentro</h1>
+    <br>
+	<h3>Puedes agregar, modificar y borrar noticias de la base de datos.</h3>
+    <br><br>
+    <input type=button value='Agregar noticia' onclick='insert()'>
+    <br><br>
+    <button id='show'>Modificar o Borrar noticia</button>
+    <br><br>
+	<div><form action='modify.php' method='post'>
+	<input type='text' name='titulo'>
+    <br><br>
+	<input type='submit' value='Buscar'>
+	</form></div>";
 }
 include_once 'footer.php';
 ?>
