@@ -1,9 +1,9 @@
 <?php
-require("inc/fw.php");
-include_once 'header.php';
+include "inc/fw.php";
+include 'header.php';
 function query($titulo)
 {
-	$sql = "select * from clientes where name like '%{$titulo}%'";
+	$sql = "SELECT * FROM clientes WHERE name LIKE '%{$titulo}%'";
 	$result = mysqli_query($idconn, $sql);
 	if ($result === false)
 	{
@@ -13,18 +13,18 @@ function query($titulo)
 	{
 		while ($row = mysqli_fetch_object($result))
 		{
-			echo "<div><form action=final.php method=POST>";
-			echo "<label>Select<input type=radio name=radio value=$row->id checked=checked /></label>";
-			echo "<BR><BR>";
-			echo "Nombre: <div class=align><input type=text name='name" . $row->id . "' value='$row->name' /></div>";
-			echo "Apellido: <div class=align><input type=text name='surname" . $row->id . "' value='$row->surname' /></div>";
-			echo "Teléfono: <div class=align><input type=text name='phone" . $row->id . "' value='$row->phone' /></div>";
-			echo "E-mail: <div class=align><input type=text name='email" . $row->id . "' size=30 value='$row->email' /></div>";
-			echo "<hr />";
+			echo "<div><form action='final.php' method='post'>
+			<label>Select<input type=radio name=radio value='" . $row->id . "' checked></label>
+			<br><br>
+			Nombre: <div class=align><input type=text name='name" . $row->id . "' value='" . $row->name . "'></div>
+			Apellido: <div class=align><input type=text name='surname" . $row->id . "' value='" . $row->surname . "'></div>
+			Teléfono: <div class=align><input type=text name='phone" . $row->id . "' value='" . $row->phone . "'></div>
+			E-mail: <div class=align><input type=text name='email" . $row->id . "' size=30 value='" . $row->email . "'></div>
+			<hr>";
 		}
 	}
-	echo "<input type=submit name=update value='Modificar' />";
-	echo "<BR><BR><input type=submit name=delete value='Eliminar' /></form></div>";
+	echo "<input type='submit' name='update' value='Modificar'>
+	<br><br><input type='submit' name='delete' value='Eliminar'></form></div>";
 	release($result, $idconn);
 }
 function release($result, $idconn)
@@ -42,5 +42,5 @@ else
 	header("Location:login.php");
 	exit;
 }
-include_once 'footer.php';
+include 'footer.php';
 ?>
